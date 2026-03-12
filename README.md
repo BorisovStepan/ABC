@@ -84,7 +84,9 @@ Different UI frameworks are developed in **separate branches**.
 3. Build & Run the project (`Cmd + R`).
 
 > **Note:**  
-> When switching between branches (SwiftUI ↔ UIKit), remove the previously installed app from the simulator before running the project again.
+> When switching between branches (SwiftUI ↔ UIKit):
+> - Remove the previously installed app from the simulator before running the project again.
+> - It is recommended to restart Xcode after switching branches to avoid build or caching issues.
 
 ---
 
