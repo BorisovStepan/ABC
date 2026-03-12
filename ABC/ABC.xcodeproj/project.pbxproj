@@ -36,6 +36,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		444C10752F62EA45009A62F2 /* Exceptions for "ABCTests" folder in "ABCTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ABCTest.swift,
+			);
+			target = 44E116CD2F62B8FC00A2C20B /* ABCTests */;
+		};
+		444C10762F62EA4B009A62F2 /* Exceptions for "ABCTests" folder in "ABC" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ABCTest.swift,
+			);
+			target = 44E116B72F62B8FB00A2C20B /* ABC */;
+		};
 		44E116E02F62B8FC00A2C20B /* Exceptions for "ABC" folder in "ABC" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -55,6 +69,15 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		444C10712F62EA24009A62F2 /* ABCTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				444C10762F62EA4B009A62F2 /* Exceptions for "ABCTests" folder in "ABC" target */,
+				444C10752F62EA45009A62F2 /* Exceptions for "ABCTests" folder in "ABCTests" target */,
+			);
+			path = ABCTests;
+			sourceTree = "<group>";
+		};
 		44E116BA2F62B8FB00A2C20B /* ABC */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -104,6 +127,7 @@
 		44E116AF2F62B8FB00A2C20B = {
 			isa = PBXGroup;
 			children = (
+				444C10712F62EA24009A62F2 /* ABCTests */,
 				44E116F42F62BCFD00A2C20B /* Packages */,
 				44E116BA2F62B8FB00A2C20B /* ABC */,
 				44E116B92F62B8FB00A2C20B /* Products */,
@@ -136,6 +160,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				444C10712F62EA24009A62F2 /* ABCTests */,
 				44E116BA2F62B8FB00A2C20B /* ABC */,
 				44E116F42F62BCFD00A2C20B /* Packages */,
 			);
@@ -204,6 +229,7 @@
 					};
 					44E116CD2F62B8FC00A2C20B = {
 						CreatedOnToolsVersion = 26.1.1;
+						LastSwiftMigration = 2610;
 						TestTargetID = 44E116B72F62B8FB00A2C20B;
 					};
 					44E116D72F62B8FC00A2C20B = {
@@ -482,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 43FH34CCA9;
@@ -493,6 +520,7 @@
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -504,6 +532,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 43FH34CCA9;
