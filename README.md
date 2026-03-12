@@ -78,10 +78,13 @@ Different UI frameworks are developed in **separate branches**.
 ## How to Run
 
 1. Open the project in Xcode.
-2. Select one of the targets:
-   - **TestABC-SwiftUI** (SwiftUI version)
-   - **TestABC-UIKit** (UIKit version)
-3. Build & Run (`Cmd + R`).
+2. Select the desired UI implementation by switching to the corresponding branch:
+   - **SwiftUI branch** – contains the SwiftUI implementation
+   - **UIKit branch** – contains the UIKit implementation
+3. Build & Run the project (`Cmd + R`).
+
+> **Note:**  
+> When switching between branches (SwiftUI ↔ UIKit), remove the previously installed app from the simulator before running the project again.
 
 ---
 
@@ -92,6 +95,12 @@ This project supports loading content via the built-in network layer.
 
 ---
 
+## Testing
+
+The project includes **unit tests for the ViewModel data loading flow**.
+The current tests focus on verifying the behavior of the `MainPage.ViewModel` when the `onAppear` action is dispatched.
+
+---
 ## Notes / Trade-offs
 
 - No third-party libraries are used (as required).
@@ -111,3 +120,4 @@ This project supports loading content via the built-in network layer.
 - Upgrade the project to **Swift 6**.
 - Migrate UIKit collections to **Diffable Data Source**.
 - Increase unit test coverage for view models, reducers/state transitions, and business logic.
+- Implement UI tests for critical user flows.
