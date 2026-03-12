@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		44E117072F62BF7200A2C20B /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 44E117062F62BF7200A2C20B /* DesignSystem */; };
+		44E117092F62BF7400A2C20B /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 44E117082F62BF7400A2C20B /* Extensions */; };
+		44E1170B2F62BF7600A2C20B /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 44E1170A2F62BF7600A2C20B /* Network */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		44E116CF2F62B8FC00A2C20B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -77,6 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44E1170B2F62BF7600A2C20B /* Network in Frameworks */,
+				44E117092F62BF7400A2C20B /* Extensions in Frameworks */,
+				44E117072F62BF7200A2C20B /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +112,7 @@
 				44E116F42F62BCFD00A2C20B /* Packages */,
 				44E116BA2F62B8FB00A2C20B /* ABC */,
 				44E116D12F62B8FC00A2C20B /* ABCTests */,
+				44E117052F62BF7200A2C20B /* Frameworks */,
 				44E116B92F62B8FB00A2C20B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,6 +125,13 @@
 				44E116D82F62B8FC00A2C20B /* ABCUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		44E117052F62BF7200A2C20B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +155,9 @@
 			);
 			name = ABC;
 			packageProductDependencies = (
+				44E117062F62BF7200A2C20B /* DesignSystem */,
+				44E117082F62BF7400A2C20B /* Extensions */,
+				44E1170A2F62BF7600A2C20B /* Network */,
 			);
 			productName = ABC;
 			productReference = 44E116B82F62B8FB00A2C20B /* ABC.app */;
@@ -601,6 +621,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		44E117062F62BF7200A2C20B /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
+		44E117082F62BF7400A2C20B /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
+		};
+		44E1170A2F62BF7600A2C20B /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 44E116B02F62B8FB00A2C20B /* Project object */;
 }
