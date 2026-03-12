@@ -34,6 +34,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				DesignSystem,
+				Extensions,
 				Network,
 			);
 			target = 44E1172C2F62C2A100A2C20B /* ABC */;
