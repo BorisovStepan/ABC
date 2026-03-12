@@ -63,11 +63,6 @@
 			path = ABC;
 			sourceTree = "<group>";
 		};
-		44E116D12F62B8FC00A2C20B /* ABCTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ABCTests;
-			sourceTree = "<group>";
-		};
 		44E116F42F62BCFD00A2C20B /* Packages */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -111,8 +106,6 @@
 			children = (
 				44E116F42F62BCFD00A2C20B /* Packages */,
 				44E116BA2F62B8FB00A2C20B /* ABC */,
-				44E116D12F62B8FC00A2C20B /* ABCTests */,
-				44E117052F62BF7200A2C20B /* Frameworks */,
 				44E116B92F62B8FB00A2C20B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,13 +118,6 @@
 				44E116D82F62B8FC00A2C20B /* ABCUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		44E117052F62BF7200A2C20B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,9 +161,6 @@
 			);
 			dependencies = (
 				44E116D02F62B8FC00A2C20B /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				44E116D12F62B8FC00A2C20B /* ABCTests */,
 			);
 			name = ABCTests;
 			packageProductDependencies = (
@@ -324,7 +307,6 @@
 				INFOPLIST_FILE = ABC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -356,7 +338,6 @@
 				INFOPLIST_FILE = ABC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
