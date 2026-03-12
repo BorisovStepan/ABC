@@ -6,31 +6,82 @@
 //
 
 import XCTest
+@preconcurrency import Network
+
 @testable import ABC
 
 final class ABCTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testLoadData() {
+        guard let url = URL(string: "https://example.com/section.jpg") else { return }
+        let section = ContentSection(
+            id: "section",
+            imageUrl: url,
+            items: [
+                .init(
+                    imageUrl: url,
+                    title: "Title",
+                    subtitle: "Subtitle"
+                )
+            ]
+        )
+        
+        let networkClient = NetworkClientMock(result: .success([section]))
+        let viewModel = MainPage.ViewModel(networkClient: networkClient)
+        
+        viewModel.dispatch(.onAppear)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            XCTAssertEqual(viewModel.state.headerImages.count, 1)
+            XCTAssertEqual(viewModel.state.cells.count, 1)
+            XCTAssertEqual(viewModel.state.selectedPage, 0)
+            XCTAssertTrue(viewModel.state.error.isEmpty)
         }
     }
+    
+    func testFailLoadData() {
+        let networkClient = NetworkClientMock(result: .failure(TestError.fetchFailed))
+        let viewModel = MainPage.ViewModel(networkClient: networkClient)
+        
+        viewModel.dispatch(.onAppear)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            XCTAssertEqual(viewModel.state.error, TestError.fetchFailed.localizedDescription)
+            XCTAssertEqual(viewModel.state.headerImages.count, 0)
+            XCTAssertEqual(viewModel.state.cells.count, 0)
+        }
+    }
+}
 
+// MARK: - Mock Network Client
+
+private struct NetworkClientMock: NetworkClientProtocol {
+    
+    let result: Result<[ContentSection], Error>
+    
+    func fetchData() async throws -> [ContentSection] {
+        switch result {
+        case .success(let sections):
+            return sections
+        case .failure(let error):
+            throw error
+        }
+    }
+    
+    func fetchImageData(from url: URL) async throws -> Data {
+        Data()
+    }
+}
+
+// MARK: - Test Error
+
+private enum TestError: LocalizedError {
+    case fetchFailed
+    
+    var errorDescription: String? {
+        switch self {
+        case .fetchFailed:
+            return "Fetch failed"
+        }
+    }
 }
