@@ -33,6 +33,7 @@
 		44E1175A2F62C2D800A2C20B /* Exceptions for "Packages" folder in "ABC" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				DesignSystem,
 				Network,
 			);
 			target = 44E1172C2F62C2A100A2C20B /* ABC */;
